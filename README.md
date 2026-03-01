@@ -17,17 +17,16 @@ This portfolio is built using **Java (Maven)** and **Node.js (Newman)**.
 ### 1. UI Automation (Selenium)
 
 - **Pre-requisites:** Mozilla Firefox installed
-- **Run Command:** ```bash 
-  mvn clean compile exec: java -Dexec.mainClass="App"
+- **Run Command:** (bash) ```mvn clean compile exec: java -Dexec.mainClass="App"```
 
 ### 2. Database Integrity (JDBC)
 
 - **Pre-requisites:** None (Uses SQLite in-memory DB.)
-- **Run Command:** ```bash
-  mvn clean compile exec: java -Dexec.mainClass="App"
+- **Run Command:** (bash) ```mvn clean compile exec: java -Dexec.mainClass="App"```
 
 ### 3. API Validation (Postman/Newman)
 
-- **Pre-requisites:** Node.js installed
-- **Run Command:** ```bash
-  newman run api-validation-postman/JSONPlaceHolder API Tests.postman_collection.json
+- **Pre-requisites:** 
+  - Node.js
+  - Newman
+- **Run Command:** (bash) ```newman run api-validation-postman/JSONPlaceHolder API Tests.postman_collection.json```
