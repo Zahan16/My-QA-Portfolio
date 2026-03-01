@@ -1,0 +1,68 @@
+{
+  "info": {
+    "_postman_id": "8056095f-4a8b-4403-8678-ef17304d8f03",
+    "name": "JSONPlaceHolder API Tests",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "4fd19a07-7a19-4ae1-ba0b-f2710b21c5ea",
+            "exec": [
+              "// Test 1: Check if the service is \"Alive\" (Status code 200)\r",
+              "pm.test(\"Status code is 200\", function() {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "// Test 2: Check if the response time is fast (Performance)\r",
+              "pm.test(\"Response time is less than 500ms\", function() {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+              "});\r",
+              "\r",
+              "// Test 3: Validate the data\r",
+              "pm.test(\"Verify the correct Post ID is returned\", function() {\r",
+              "    var jsonData = pm.response.json(); // Convert the response to a JS Object\r",
+              "    pm.expect(jsonData.id).to.be.eql(1); // Verfiy the ID is 1\r",
+              "    pm.expect(jsonData.title).to.be.a('string'); // Verfiy the title is text\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "packages": {},
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "e16ac15e-07bf-49e2-bff1-ff1d322e92a9",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://jsonplaceholder.typicode.com/posts/1",
+          "protocol": "https",
+          "host": [
+            "jsonplaceholder",
+            "typicode",
+            "com"
+          ],
+          "path": [
+            "posts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
